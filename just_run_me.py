@@ -9,4 +9,4 @@ print(f"\nGood Job {localuser.upper()}!!!\n")
 for letter in localuser.upper():
     print(f"Give me a {letter}!")
 
-print(f"\nWhat does that spell?...{localuser.upper()}")
+print(f"\nWhat does that spell?...{localuser.upper()}  WOOOO HOOOOOOO!!! ")
