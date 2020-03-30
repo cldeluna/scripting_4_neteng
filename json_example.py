@@ -185,7 +185,7 @@ if __name__ == '__main__':
                                      epilog="Usage: ' python json_example.py' ")
 
     #parser.add_argument('all', help='Execute all exercises in week 4 assignment')
-    parser.add_argument('-a', '--all', help='Execute all exercises in week 4 assignment', action='store_true',
-                        default=False)
+    # parser.add_argument('-a', '--all', help='Execute all exercises in week 4 assignment', action='store_true',
+    #                     default=False)
     arguments = parser.parse_args()
     main()
