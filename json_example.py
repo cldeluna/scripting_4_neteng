@@ -197,9 +197,6 @@ def main():
                 print(f"\njson_data with key {key} has keys: {json_data[key].keys()}\n\n")
 
 
-
-
-
 # Standard call to the main() function.
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Script Description",
