@@ -149,31 +149,54 @@ def load_data(key):
 
 def main():
 
-    data = load_data('shvlan')
+
+    # Simple
+    if arguments.simple or arguments.all:
+        print("\n====== SIMPLE EXAMPLE")
+
+        person_info = '{"fname": "Travis", "lname": "Bickle", "city": "New York", ' \
+                      '"occupation": "Taxi Driver", "age": 34, "friends": ["Iris", "Wizard", "Betsy"]}'
+        print(f"\nvariable person_info is of type {type(person_info)} and has value: \n\t{person_info}")
+        try:
+            print(f"Get keys:")
+            print(f"{person_info.keys()}")
+        except Exception as e:
+            print(f"\tERROR!!\n\t{e}")
+
+        person_info_json_obj = json.loads(person_info)
+        print(f"\nvariable person_info_json_obj is of type {type(person_info_json_obj)} and has value: \n\t{person_info_json_obj}\n")
+        print(f"Get keys:\n\t {person_info_json_obj.keys()}\n")
+        print(f"Get Full Name:\n\t {person_info_json_obj['fname']} {person_info_json_obj['lname']} \n")
+        print(f"Get Age:\n\t {person_info_json_obj['age']} \n")
+        print(f"Get Friends:\n\t {person_info_json_obj['friends']} \n")
 
 
-    print(f"data variable is of type: {type(data)}")
+    # Complex Example
+    if arguments.complex or arguments.all:
+        print("\n====== COMPLEX EXAMPLE")
 
-    print(f"data variable has length: {len(data)}")
+        data = load_data('shvlan')
 
-    print(f"data variable starts with: {data.strip()[0]}")
+        print(f"\ndata variable is of type: {type(data)}")
+        print(f"\ndata variable has length: {len(data)}")
 
-    json_data = json.loads(str(data))
+        print(f"\ndata variable starts with: {data.strip()[0]}")
 
-    print(f"json_data variable is of type: {type(json_data)}")
+        json_data = json.loads(str(data))
 
-    print(f"json_data variable has length: {len(json_data)}")
+        print(f"\njson_data variable is of type: {type(json_data)}")
 
-    print(f"json_data variable has keys: {json_data.keys()}")
+        print(f"\njson_data variable has length: {len(json_data)}")
 
+        print(f"\njson_data variable has keys: {json_data.keys()}")
 
-    if type(json_data) == dict:
-        for key in json_data.keys():
-            print(f"Value for key {key}:\n{json_data[key]}")
-            print("\nAhhhhhh What the heck is that!!!!\n")
-            print(json.dumps(json_data, indent=4))
-            print()
-            print(f"json_data with key {key} has keys: {json_data[key].keys()}")
+        if type(json_data) == dict:
+            for key in json_data.keys():
+                print(f"Value for key {key}:\n{json_data[key]}")
+                print("\nAhhhhhh What the heck is that!!!!\n")
+                print(json.dumps(json_data, indent=4))
+                print()
+                print(f"\njson_data with key {key} has keys: {json_data[key].keys()}\n\n")
 
 
 
@@ -185,7 +208,8 @@ if __name__ == '__main__':
                                      epilog="Usage: ' python json_example.py' ")
 
     #parser.add_argument('all', help='Execute all exercises in week 4 assignment')
-    # parser.add_argument('-a', '--all', help='Execute all exercises in week 4 assignment', action='store_true',
-    #                     default=False)
+    parser.add_argument('-a', '--all', help='Execute all exercises in week 4 assignment', action='store_true', default=False)
+    parser.add_argument('-s', '--simple', help='Execute simple example', action='store_true', default=True)
+    parser.add_argument('-c', '--complex', help='Execute complex example', action='store_true', default=False)
     arguments = parser.parse_args()
     main()

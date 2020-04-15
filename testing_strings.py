@@ -79,11 +79,13 @@ print("\nVarious examples of print syntax as python evolved")
 print('Hello, ' + os.getlogin() + '! How are you this fine ' + today + '?')
 print('The year is %d'%2020)
 print("Today is {}!".format(today))
+
+
 print()
 print(f"Hello {os.getlogin()}! How are you this fine {today.upper()}?")
 print("Note the mix of quotation types...(in the code not in the output)")
 print(f"Hello {os.getlogin()}! How are you this 'fine' {today.lower()}? <- What were the outer quotations used for this print statement?")
-print(f'Hello {os.getlogin()}! How are you this "fine" {today}? <- What were the outer quotations used for this print statement')
+print(f'Hello {os.getlogin()}! How are you this "fine" {today}? <- What were the outer quotations used for this print statement?')
 
 print()
 print(f"\n printing help for a varialbe - dir() and type()")
