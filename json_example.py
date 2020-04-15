@@ -157,6 +157,7 @@ def main():
         person_info = '{"fname": "Travis", "lname": "Bickle", "city": "New York", ' \
                       '"occupation": "Taxi Driver", "age": 34, "friends": ["Iris", "Wizard", "Betsy"]}'
         print(f"\nvariable person_info is of type {type(person_info)} and has value: \n\t{person_info}")
+        # print(f"{person_info.keys()}")
         try:
             print(f"Get keys:")
             print(f"{person_info.keys()}")
@@ -179,15 +180,12 @@ def main():
 
         print(f"\ndata variable is of type: {type(data)}")
         print(f"\ndata variable has length: {len(data)}")
-
         print(f"\ndata variable starts with: {data.strip()[0]}")
 
         json_data = json.loads(str(data))
 
         print(f"\njson_data variable is of type: {type(json_data)}")
-
         print(f"\njson_data variable has length: {len(json_data)}")
-
         print(f"\njson_data variable has keys: {json_data.keys()}")
 
         if type(json_data) == dict:
